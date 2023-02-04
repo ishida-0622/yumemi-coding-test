@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { PrefectureResultType } from 'types/api';
-import { AxiosError } from 'axios';
 import { getPrefectures } from 'api/getPrefectures';
 
 /**
@@ -21,9 +20,6 @@ export const usePrefectures = () => {
         setPrefectures(res);
       } catch (e) {
         if (e instanceof Error) {
-          console.error(e.message);
-          setError(e.message);
-        } else if (e instanceof AxiosError) {
           console.error(e.message);
           setError(e.message);
         } else {
