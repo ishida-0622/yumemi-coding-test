@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Header } from 'components/organisms/Header';
 import { Footer } from 'components/organisms/Footer';
-import { Checkbox } from 'components/atoms/Checkbox';
+import { Checkbox } from 'components/molecules/Checkbox';
 import { NowLoading } from 'components/atoms/NowLoading';
 import { Chart } from 'components/organisms/Chart';
 import { usePopulation } from 'hooks/usePopulation';
