@@ -12,6 +12,10 @@ header h1 {
   padding: 0.5rem 0;
 }
 
+footer {
+  background-color: #c4c4c4;
+}
+
 main {
   width: 80%;
   margin: 0 auto;
