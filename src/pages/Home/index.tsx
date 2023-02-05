@@ -26,18 +26,22 @@ export const Home = () => {
       <main>
         {isLoading && <NowLoading />}
         {error !== '' && <h2>{error}</h2>}
-        <section>
-          {prefectures.map((pref) => (
-            <Checkbox
-              key={pref.prefCode}
-              checked={selected[pref.prefCode - 1]}
-              onChange={() => handleCheckboxOnChange(pref.prefCode)}
-            >
-              {pref.prefName}
-            </Checkbox>
-          ))}
+        <p>都道府県</p>
+        <section className="pref-checkboxes">
+          <ul>
+            {prefectures.map((pref) => (
+              <li key={pref.prefCode}>
+                <Checkbox
+                  checked={selected[pref.prefCode - 1]}
+                  onChange={() => handleCheckboxOnChange(pref.prefCode)}
+                >
+                  {pref.prefName}
+                </Checkbox>
+              </li>
+            ))}
+          </ul>
         </section>
-        <section>
+        <section className="pop-chart">
           <Chart populations={populations} />
         </section>
       </main>
