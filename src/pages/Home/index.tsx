@@ -26,6 +26,7 @@ export const Home = () => {
       <main>
         {isLoading && <NowLoading />}
         {error !== '' && <h2>{error}</h2>}
+        <p>都道府県</p>
         <section className="pref-checkboxes">
           <ul>
             {prefectures.map((pref) => (
