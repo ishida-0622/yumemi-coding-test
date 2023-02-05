@@ -27,15 +27,18 @@ export const Home = () => {
         {isLoading && <NowLoading />}
         {error !== '' && <h2>{error}</h2>}
         <section className="pref-checkboxes">
-          {prefectures.map((pref) => (
-            <Checkbox
-              key={pref.prefCode}
-              checked={selected[pref.prefCode - 1]}
-              onChange={() => handleCheckboxOnChange(pref.prefCode)}
-            >
-              {pref.prefName}
-            </Checkbox>
-          ))}
+          <ul>
+            {prefectures.map((pref) => (
+              <li key={pref.prefCode}>
+                <Checkbox
+                  checked={selected[pref.prefCode - 1]}
+                  onChange={() => handleCheckboxOnChange(pref.prefCode)}
+                >
+                  {pref.prefName}
+                </Checkbox>
+              </li>
+            ))}
+          </ul>
         </section>
         <section className="pop-chart">
           <Chart populations={populations} />
