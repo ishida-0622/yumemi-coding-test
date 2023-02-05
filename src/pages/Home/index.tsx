@@ -23,18 +23,24 @@ export const Home = () => {
   return (
     <>
       <Header />
-      {isLoading && <NowLoading />}
-      {error !== '' && <h2>{error}</h2>}
-      {prefectures.map((pref) => (
-        <Checkbox
-          key={pref.prefCode}
-          checked={selected[pref.prefCode - 1]}
-          onChange={() => handleCheckboxOnChange(pref.prefCode)}
-        >
-          {pref.prefName}
-        </Checkbox>
-      ))}
-      <Chart populations={populations} />
+      <main>
+        {isLoading && <NowLoading />}
+        {error !== '' && <h2>{error}</h2>}
+        <section>
+          {prefectures.map((pref) => (
+            <Checkbox
+              key={pref.prefCode}
+              checked={selected[pref.prefCode - 1]}
+              onChange={() => handleCheckboxOnChange(pref.prefCode)}
+            >
+              {pref.prefName}
+            </Checkbox>
+          ))}
+        </section>
+        <section>
+          <Chart populations={populations} />
+        </section>
+      </main>
       <Footer />
     </>
   );
