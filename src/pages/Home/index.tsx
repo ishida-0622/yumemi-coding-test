@@ -26,7 +26,7 @@ export const Home = () => {
       <main>
         {isLoading && <NowLoading />}
         {error !== '' && <h2>{error}</h2>}
-        <section>
+        <section className="pref-checkboxes">
           {prefectures.map((pref) => (
             <Checkbox
               key={pref.prefCode}
@@ -37,7 +37,7 @@ export const Home = () => {
             </Checkbox>
           ))}
         </section>
-        <section>
+        <section className="pop-chart">
           <Chart populations={populations} />
         </section>
       </main>
