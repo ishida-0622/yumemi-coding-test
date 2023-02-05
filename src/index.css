@@ -1,1 +1,46 @@
+body {
+  margin: 0;
+  text-align: center;
+}
 
+header {
+  background-color: #c4c4c4;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+footer {
+  background-color: #c4c4c4;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section {
+  margin: 2.5% 0;
+}
+
+.pref-checkboxes ul {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pref-checkboxes li {
+  list-style: none;
+  width: 5.5rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+  }
+}
