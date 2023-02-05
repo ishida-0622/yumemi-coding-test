@@ -25,6 +25,20 @@ section {
   margin: 2.5% 0;
 }
 
+.pref-checkboxes ul {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pref-checkboxes li {
+  list-style: none;
+  width: 5.5rem;
+  text-align: left;
+}
+
 @media screen and (max-width: 480px) {
   main {
     width: 100%;
