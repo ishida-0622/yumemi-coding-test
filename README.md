@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# 株式会社ゆめみ フロントエンドコーディング試験
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+株式会社ゆめみの[フロントエンドコーディング試験](https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d)にて作成した都道府県別の総人口推移グラフを表示するwebアプリケーションです。
 
-## Available Scripts
+## 成果物
+https://k-ishida-yumemi-coding-test.web.app/
 
-In the project directory, you can run:
+## 導入ツール
 
-### `npm start`
+|名前|備考|
+|---|---|
+|React|create-react-appを使用|
+|TypeScript|-|
+|Axios|API|
+|Highcharts|グラフ|
+|Jest|テスト create-react-appに同梱されていたもののみを使用|
+|ESLint|静的解析|
+|Prettier|コードフォーマット|
+|EditorConfig|コーディングスタイルの指定|
+|Firebase|Hosting|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 環境
+- Windows 10
+- VSCode 1.75.0
+- Node.js 18.12.1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 環境構築
 
-### `npm test`
+```
+git clone https://github.com/ishida-0622/yumemi-coding-test
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+package.jsonがあるディレクトリで以下のコマンドを実行
 
-### `npm run build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+srcディレクトリ直下に `.env` ファイルを作成し、API keyを設定
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+REACT-APP-API-KEY = "Your API key"
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+localhostを建てて実行
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## アピールポイント
+- APIの取得結果をキャッシュしているため二度目以降は取得処理が走らない
+- 都道府県ごとに折れ線の色、形が固定
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 懸念点
+- テストコードを書くのが初めてだったので、テストの手法が間違っているかもしれない
+- axiosをモックする方法がよくわからなかったので、API関連のテストができていない
+- 折れ線の追加・削除時に挙動がおかしかったのを回避するためにグラフのアニメーションを消した
+- useMemoを使っているものの、依存配列に渡す値が配列やObjectなので恐らく意味がない
+- useCallbackを使っているものの、関連するメモ化処理がないため意味がない
+- [PR#13](https://github.com/ishida-0622/yumemi-coding-test/pull/13)のタイトルを英語にしてしまい、そのまま気づかずマージしてしまった
