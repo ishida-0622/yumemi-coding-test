@@ -30,16 +30,16 @@ https://k-ishida-yumemi-coding-test.web.app/
 git clone https://github.com/ishida-0622/yumemi-coding-test
 ```
 
-package.jsonがあるディレクトリで以下のコマンドを実行
+package.json配下のディレクトリで以下のコマンドを実行
 
 ```
 npm install
 ```
 
-srcディレクトリ直下に `.env` ファイルを作成し、API keyを設定
+ルートディレクトリに `.env` ファイルを作成し、API keyを設定
 
 ```
-REACT-APP-API-KEY = "Your API key"
+REACT_APP_API_KEY = "Your API key"
 ```
 
 localhostを建てて実行
